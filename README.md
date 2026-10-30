@@ -19,4 +19,4 @@ Módulo independente focado na implementação da estrutura de dados **Tabela Ha
 ---
 
 ## 🛠️ Tecnologias
-* Linguagem: *[Insira a linguagem aqui, ex: C / C++ / Java / Python]*
+* Linguagem: *Java*
