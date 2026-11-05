@@ -1,8 +1,8 @@
 # Projeto Tabela HASH
 
-**Data da Apresentacao:** 19/11/2026 durante a aula (postar no Blackboard antes da apresentacao).  
-**Equipe:** No minimo 5 e no maximo 7 pessoas.  
-**Avaliacao / Nota:** 1,5 pontos.  
+**Data da Apresentação:** 19/11/2026 durante a aula (postar no Blackboard antes da apresentação).  
+**Equipe:** No mínimo 5 e no máximo 7 pessoas.  
+**Avaliação / Nota:** 1,5 pontos.  
 
 ---
 
@@ -13,18 +13,19 @@
 - Iago Veras de Melo
 - Caio Hanel
 - João Pedro Medeiros
+- Rafael Onias Barbosa
 
 ---
 
-## Descricao do Projeto
+## Descrição do Projeto
 
-Implemente usando uma linguagem de programacao (C, Java, Python ou JavaScript) a estrutura de dados do tipo **Tabela Hash encadeada** para armazenar informacoes dos alunos de uma universidade.
+Implemente usando uma linguagem de programação (C, Java, Python ou JavaScript) a estrutura de dados do tipo **Tabela Hash encadeada** para armazenar informações dos alunos de uma universidade.
 
-### Informacoes do Aluno
+### Informações do Aluno
 
-Para cada aluno deve-se armazenar as seguintes informacoes:
+Para cada aluno deve-se armazenar as seguintes informações:
 
-- **Matricula** (chave de busca) - *Todas as matriculas devem ser numeros inteiros*
+- **Matrícula** (chave de busca) — *Todas as matrículas devem ser números inteiros*
 - **Nome**
 - **Idade**
 
@@ -32,58 +33,64 @@ Para cada aluno deve-se armazenar as seguintes informacoes:
 
 ## Estrutura e Regras de Hashing
 
-### Funcao de Transformacao (Hash)
+### Função de Transformação (Hash)
 
-A seguinte funcao de transformacao deve ser usada:
+A seguinte função de transformação deve ser usada:
 
 $$
 h(\text{chave}) = \text{chave} \bmod M
 $$
 
-Onde **$M = 11$** e o tamanho da tabela hash.
+Onde **$M = 11$** é o tamanho da tabela hash.
 
-### Tratamento de Colisao (Hashing Encadeado)
+### Tratamento de Colisão (Hashing Encadeado)
 
-- Durante a insercao, caso ocorra uma colisao, o novo aluno deve ser inserido **no final da lista encadeada**.
-- Antes das operacoes de **Inserir**, **Buscar** e **Remover**, e necessario computar o valor do endereco usando a Funcao Hash.
+- Durante a inserção, caso ocorra uma colisão, o novo aluno deve ser inserido **no final da lista encadeada**.
+- Antes das operações de **Inserir**, **Buscar** e **Remover**, é necessário computar o valor do endereço usando a Função Hash.
 
 ---
 
 ## Funcionalidades e Menu do Sistema
 
-Crie um menu interativo com as seguintes opcoes:
+Crie um menu interativo com as seguintes opções:
 
 1. **Inserir novo Aluno**
-   - O usuario deve informar: matricula, nome e idade do aluno.
-   - **Regra:** O sistema **nao** deve permitir cadastrar dois alunos com a mesma matricula.
+   - O usuário deve informar: matrícula, nome e idade do aluno.
+   - **Regra:** O sistema **não** deve permitir cadastrar dois alunos com a mesma matrícula.
 2. **Buscar Aluno**
-   - O usuario deve digitar o numero da matricula do aluno.
+   - O usuário deve digitar o número da matrícula do aluno.
 3. **Remover Aluno**
-   - O usuario deve digitar o numero da matricula do aluno.
+   - O usuário deve digitar o número da matrícula do aluno.
 4. **Exibir Tabela Hash**
-   - Apresenta o estado atual dos indices e suas respectivas listas encadeadas.
+   - Apresenta o estado atual dos índices e suas respectivas listas encadeadas.
 5. **Encerrar Sistema**
 
 ---
 
 ## Avisos e Regras
-- Projetos copiados terao **nota ZERO**.
-- **Nenhuma biblioteca pronta** que forneca a implementacao da Tabela Hash pode ser usada (como java.util.HashMap, Hashtable, etc.).
-- Submissao obrigatoria com o nome de todos os membros no Blackboard.
+- Projetos copiados terão **nota ZERO**.
+- **Nenhuma biblioteca pronta** que forneça a implementação da Tabela Hash pode ser usada (como java.util.HashMap, Hashtable, etc.).
+- Submissão obrigatória com o nome de todos os membros no Blackboard.
 
 ---
 
-## Status e Pendencias do Projeto
+## Roteiro de Execução (Ordem de Dependências)
 
-- [x] Configuracao Inicial: Projeto Java configurado no VS Code.
-- [x] Identificacao da Equipe: Nomes dos membros do grupo adicionados.
-- [ ] Classe Aluno: Criar a classe com atributos matricula (int), nome (String) e idade (int), com getters e toString().
-- [ ] Estrutura de No / Lista Encadeada propria: Implementar a classe No (ou Elemento) contendo o objeto Aluno e a referencia proximo, sem usar bibliotecas prontas.
-- [ ] Classe TabelaHash:
-  - [ ] Vetor de listas encadeadas de tamanho fixo M = 11.
-  - [ ] Funcao hash: h(chave) = chave mod 11.
-  - [ ] Metodo inserir(Aluno a): verificar se a matricula ja existe antes de inserir; em caso de colisao, inserir obrigatoriamente no final da lista encadeada.
-  - [ ] Metodo buscar(int matricula): calcular hash, percorrer lista e retornar o aluno (ou informar se nao encontrado).
-  - [ ] Metodo remover(int matricula): calcular hash, percorrer lista, remover o no mantendo o encadeamento.
-  - [ ] Metodo exibir(): percorrer os indices de 0 a 10 e imprimir os alunos encadeados em cada posicao.
-- [ ] Menu Interativo (App.java): Implementar o menu com as 5 opcoes com leitura via teclado (Scanner).
+### Concluído
+- [x] Configuração inicial do projeto no VS Code.
+- [x] Identificação da equipe adicionada.
+
+### Pendente (em ordem de prioridade)
+- [ ] **Passo 1 (Entidade Aluno):**
+  - Criar classe Aluno com matrícula (int), nome (String) e idade (int), construtor, getters e toString().
+- [ ] **Passo 2 (Estrutura de Nó / Encadeamento):**
+  - Criar classe No contendo objeto Aluno e referência para o próximo nó (sem usar bibliotecas prontas).
+- [ ] **Passo 3 (Classe TabelaHash):**
+  - Criar array de referências No com tamanho fixo M = 11.
+  - Implementar função hash: h(chave) = chave mod 11.
+  - Implementar método inserir(Aluno a): verificar duplicidade de matrícula antes de inserir; em colisão, inserir obrigatoriamente no final da lista encadeada.
+  - Implementar método buscar(int matricula): retornar o aluno ou null/aviso caso não exista.
+  - Implementar método remover(int matricula): desvincular o nó da lista encadeada mantendo a integridade dos ponteiros.
+  - Implementar método exibir(): percorrer os 11 índices mostrando todos os alunos encadeados em cada posição.
+- [ ] **Passo 4 (Menu Interativo no App.java):**
+  - Instanciar a TabelaHash e criar loop com Scanner no App.java para as 5 opções com tratamento de entradas inválidas.

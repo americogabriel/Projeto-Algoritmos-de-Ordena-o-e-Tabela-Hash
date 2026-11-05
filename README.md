@@ -1,6 +1,6 @@
 # Projeto de Estruturas de Dados II
 
-Trabalho pratico desenvolvido em grupo para a disciplina de Estruturas de Dados II. O repositorio reune implementacoes de algoritmos classicos de ordenacao e uma estrutura de busca baseada em Tabela Hash.
+Trabalho prático desenvolvido em grupo para a disciplina de Estruturas de Dados II. O repositório reúne implementações de algoritmos clássicos de ordenação e uma estrutura de busca baseada em Tabela Hash.
 
 ---
 
@@ -11,51 +11,55 @@ Trabalho pratico desenvolvido em grupo para a disciplina de Estruturas de Dados 
 - Iago Veras de Melo
 - Caio Hanel
 - João Pedro Medeiros
+- Rafael Onias Barbosa
 
 ---
 
-## Conteudo do Repositorio
+## Conteúdo do Repositório
 
-### 1. [Algoritmos de Ordenacao](./AlgoritmosOrdenacao)
-Programa interativo que permite ao usuario escolher e executar algoritmos para ordenar conjuntos de dados:
+### 1. [Algoritmos de Ordenação](./AlgoritmosOrdenacao)
+Programa interativo que permite ao usuário escolher e executar algoritmos para ordenar conjuntos de dados:
 * Bubble Sort
 * Selection Sort
 * Insertion Sort
 * Quick Sort
 
 ### 2. [Tabela Hash](./TabelaHash)
-Modulo focado na implementacao da estrutura de dados Tabela Hash encadeada com M = 11 posicoes para gerenciamento de alunos universitarios (matricula, nome, idade), sem uso de colecoes prontas do Java.
+Módulo focado na implementação da estrutura de dados Tabela Hash encadeada com M = 11 posições para gerenciamento de alunos universitários (matrícula, nome, idade), sem uso de coleções prontas do Java.
 
 ---
 
-## Status Geral e Pendencias dos Projetos
+## Status e Roteiro de Execução (Ordem de Dependências)
 
-### Algoritmos de Ordenacao
+### Algoritmos de Ordenação
+
+Itens concluídos:
 - [x] Classes dos algoritmos implementadas (BubbleSort, SelectionSort, InsertionSort, MergeSort, QuickSort).
-- [x] Interface IAlgoritmoOrdenacao e utilitario Utils (gerar e imprimir vetor).
-- [x] Estrutura inicial do menu interativo no App.java.
+- [x] Interface IAlgoritmoOrdenacao e utilitário base Utils.
+- [x] Estrutura visual do menu criada no App.java.
 - [x] Nomes dos integrantes da equipe adicionados.
-- [ ] Lógica de execucao no menu: Conectar as chamadas de ordenacao dentro dos cases do switch em App.java.
-- [ ] Entrada via arquivo .txt: Implementar leitura de arquivo com grande conjunto de numeros para a memoria.
-- [ ] Regra dos 100 primeiros: Limitar a exibicao no terminal para mostrar apenas os 100 primeiros elementos quando houver grande volume.
-- [ ] Tabela comparativa de tempos: Simular a execucao para entradas de tamanho n, n^2, n^3 e n^10 com tempos estimados e indicacao da IA utilizada.
+
+Passos pendentes em ordem de execução:
+- [ ] Passo 1 (Entrada de Dados): Criar arquivo de teste (.txt) e implementar método para carregar os números na memória.
+- [ ] Passo 2 (Formatação de Saída): Implementar função para exibir dados de entrada e saída limitando aos 100 primeiros elementos quando houver grande volume.
+- [ ] Passo 3 (Integração do Menu): Conectar os cases do menu no App.java para ler a opção, clonar o vetor carregado, acionar o algoritmo escolhido e medir o tempo de execução.
+- [ ] Passo 4 (Relatório e Análise): Simular a execução para entradas de tamanho n, n^2, n^3 e n^10 e registrar a tabela comparativa com a IA utilizada.
 
 ### Tabela Hash
+
+Itens concluídos:
 - [x] Estrutura inicial do projeto Java configurada.
 - [x] Nomes dos integrantes da equipe adicionados.
-- [ ] Classe Aluno: Criar modelo com matricula (int), nome (String) e idade (int).
-- [ ] Lista Encadeada propria: Implementar estrutura de nos (No) para encadeamento, sem usar bibliotecas prontas do Java.
-- [ ] Classe TabelaHash:
-  - [ ] Vetor de tamanho M = 11.
-  - [ ] Funcao hash: h(chave) = chave mod 11.
-  - [ ] Insercao com colisao no final da lista encadeada e bloqueio de matriculas duplicadas.
-  - [ ] Operacoes de Inserir, Buscar, Remover e Exibir.
-- [ ] Menu Interativo (App.java):
-  - [ ] 1 - Inserir novo Aluno
-  - [ ] 2 - Buscar Aluno
-  - [ ] 3 - Remover Aluno
-  - [ ] 4 - Exibir Tabela Hash
-  - [ ] 5 - Encerrar Sistema
+
+Passos pendentes em ordem de execução:
+- [ ] Passo 1 (Entidade Aluno): Criar a classe Aluno com matrícula (int), nome (String) e idade (int).
+- [ ] Passo 2 (Estrutura de Nó): Criar a classe No contendo objeto Aluno e referência para o próximo nó (sem coleções prontas).
+- [ ] Passo 3 (Classe TabelaHash):
+  - [ ] Instanciar array de nós com tamanho fixo M = 11.
+  - [ ] Implementar função hash: h(chave) = chave mod 11.
+  - [ ] Método inserir: validar duplicatas de matrícula e inserir colisões no final da lista encadeada.
+  - [ ] Métodos buscar, remover e exibir o estado dos 11 índices.
+- [ ] Passo 4 (Menu Interativo): Implementar o loop do menu no App.java com Scanner para as 5 opções (Inserir, Buscar, Remover, Exibir e Sair).
 
 ---
 
