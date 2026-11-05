@@ -1,15 +1,30 @@
-
 # Projeto Tabela HASH
 
-## Descrição do Projeto
+**Data da Apresentacao:** 19/11/2026 durante a aula (postar no Blackboard antes da apresentacao).  
+**Equipe:** No minimo 5 e no maximo 7 pessoas.  
+**Avaliacao / Nota:** 1,5 pontos.  
 
-Implemente usando uma linguagem de programação (C, Java, Python ou JavaScript) a estrutura de dados do tipo **Tabela Hash encadeada** para armazenar informações dos alunos de uma universidade.
+---
 
-### Informações do Aluno
+## Equipe
+- Gabriel da Cunha Prudencio
+- Gabriel Ferreira Américo
+- José Adrian Cosmo de Sousa
+- Iago Veras de Melo
+- Caio Hanel
+- João Pedro Medeiros
 
-Para cada aluno deve-se armazenar as seguintes informações:
+---
 
-- **Matrícula** (chave de busca) — *Todas as matrículas devem ser números inteiros*
+## Descricao do Projeto
+
+Implemente usando uma linguagem de programacao (C, Java, Python ou JavaScript) a estrutura de dados do tipo **Tabela Hash encadeada** para armazenar informacoes dos alunos de uma universidade.
+
+### Informacoes do Aluno
+
+Para cada aluno deve-se armazenar as seguintes informacoes:
+
+- **Matricula** (chave de busca) - *Todas as matriculas devem ser numeros inteiros*
 - **Nome**
 - **Idade**
 
@@ -17,46 +32,58 @@ Para cada aluno deve-se armazenar as seguintes informações:
 
 ## Estrutura e Regras de Hashing
 
-### Função de Transformação (Hash)
+### Funcao de Transformacao (Hash)
 
-A seguinte função de transformação deve ser usada:
+A seguinte funcao de transformacao deve ser usada:
 
 $$
 h(\text{chave}) = \text{chave} \bmod M
 $$
 
-Onde **$M = 11$** é o tamanho da tabela hash.
+Onde **$M = 11$** e o tamanho da tabela hash.
 
-### Tratamento de Colisão (Hashing Encadeado)
+### Tratamento de Colisao (Hashing Encadeado)
 
-- Durante a inserção, caso ocorra uma colisão, o novo aluno deve ser inserido **no final da lista encadeada**.
-- Antes das operações de **Inserir**, **Buscar** e **Remover**, é necessário computar o valor do endereço usando a Função Hash.
+- Durante a insercao, caso ocorra uma colisao, o novo aluno deve ser inserido **no final da lista encadeada**.
+- Antes das operacoes de **Inserir**, **Buscar** e **Remover**, e necessario computar o valor do endereco usando a Funcao Hash.
 
 ---
 
 ## Funcionalidades e Menu do Sistema
 
-Crie um menu interativo com as seguintes opções:
+Crie um menu interativo com as seguintes opcoes:
 
 1. **Inserir novo Aluno**
-   - O usuário deve informar: matrícula, nome e idade do aluno.
-   - **Regra:** O sistema **não** deve permitir cadastrar dois alunos com a mesma matrícula.
+   - O usuario deve informar: matricula, nome e idade do aluno.
+   - **Regra:** O sistema **nao** deve permitir cadastrar dois alunos com a mesma matricula.
 2. **Buscar Aluno**
-   - O usuário deve digitar o número da matrícula do aluno.
+   - O usuario deve digitar o numero da matricula do aluno.
 3. **Remover Aluno**
-   - O usuário deve digitar o número da matrícula do aluno.
+   - O usuario deve digitar o numero da matricula do aluno.
 4. **Exibir Tabela Hash**
-   - Apresenta o estado atual dos índices e suas respectivas listas encadeadas.
+   - Apresenta o estado atual dos indices e suas respectivas listas encadeadas.
 5. **Encerrar Sistema**
 
 ---
 
-## Informações Importantes
+## Avisos e Regras
+- Projetos copiados terao **nota ZERO**.
+- **Nenhuma biblioteca pronta** que forneca a implementacao da Tabela Hash pode ser usada (como java.util.HashMap, Hashtable, etc.).
+- Submissao obrigatoria com o nome de todos os membros no Blackboard.
 
-- **Data da Apresentação:** 19/11/2026 durante a aula (postar no Blackboard antes da apresentação).
-- **Equipe:** No mínimo 5 e no máximo 7 pessoas.
-- **Submissão:** Ao final do trabalho, apenas um membro de cada equipe deverá postar o projeto completo no Blackboard, incluindo **(OBRIGATORIAMENTE)** os nomes dos membros da equipe.
-- **Avaliação / Nota:** 1,5 pontos.
-- **Avisos:**
-  - Projetos copiados terão **nota ZERO**.
-  - **Nenhuma biblioteca pronta** que forneça a implementação da Tabela Hash pode ser usada.
+---
+
+## Status e Pendencias do Projeto
+
+- [x] Configuracao Inicial: Projeto Java configurado no VS Code.
+- [x] Identificacao da Equipe: Nomes dos membros do grupo adicionados.
+- [ ] Classe Aluno: Criar a classe com atributos matricula (int), nome (String) e idade (int), com getters e toString().
+- [ ] Estrutura de No / Lista Encadeada propria: Implementar a classe No (ou Elemento) contendo o objeto Aluno e a referencia proximo, sem usar bibliotecas prontas.
+- [ ] Classe TabelaHash:
+  - [ ] Vetor de listas encadeadas de tamanho fixo M = 11.
+  - [ ] Funcao hash: h(chave) = chave mod 11.
+  - [ ] Metodo inserir(Aluno a): verificar se a matricula ja existe antes de inserir; em caso de colisao, inserir obrigatoriamente no final da lista encadeada.
+  - [ ] Metodo buscar(int matricula): calcular hash, percorrer lista e retornar o aluno (ou informar se nao encontrado).
+  - [ ] Metodo remover(int matricula): calcular hash, percorrer lista, remover o no mantendo o encadeamento.
+  - [ ] Metodo exibir(): percorrer os indices de 0 a 10 e imprimir os alunos encadeados em cada posicao.
+- [ ] Menu Interativo (App.java): Implementar o menu com as 5 opcoes com leitura via teclado (Scanner).
