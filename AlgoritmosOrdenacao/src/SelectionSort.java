@@ -3,11 +3,11 @@
  * @author Hilario Tomaz Alves de Oliveira
  *
  */
-                        // todos as classes utilizam como base os métodos do IAlgoritmosOrdenacao
+
+// todos as classes utilizam como base os métodos do IAlgoritmosOrdenacao
 public class SelectionSort implements IAlgoritmoOrdenacao {
 
   @Override // usado para indicar que um metodo ja existente está sendo sobrescrito
-	
   public void ordenarVetor(int[] vetor) {
 	
     for(int i = 0; i < vetor.length; i++) {
@@ -34,7 +34,7 @@ public class SelectionSort implements IAlgoritmoOrdenacao {
 		
 	  }
 		
-    } // FOR ELEMENTOS
+    }
 	
   }
 

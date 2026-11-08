@@ -19,12 +19,12 @@ public class MergeSort implements IAlgoritmoOrdenacao {
 	    
     if( inicio < fim ) {
 	    	
-      meio = ( inicio + fim ) / 2;
+      meio = ( inicio + fim ) / 2; 
       
-      this.mergeSort( vetor, inicio, meio );
-      this.mergeSort( vetor, meio + 1, fim );
+      this.mergeSort( vetor, inicio, meio ); 
+      this.mergeSort( vetor, meio + 1, fim ); 
 	      
-      this.intercala( vetor, inicio, fim, meio );
+      this.intercala( vetor, inicio, fim, meio ); 
 	      
     }
 	    
@@ -60,17 +60,17 @@ public class MergeSort implements IAlgoritmoOrdenacao {
       aux[posLivre] = vetor[i];
 	      
       posLivre++; 
-    } // FOR VETOR 1
+    } 
 	    
     for(int i = inicioVetor2; i <= fim; i++) {	
       aux[posLivre] = vetor[i];
 	      
       posLivre++; 
-    } // FOR VETOR 2
+    } 
 	    
     for(int i = inicio; i <= fim; i++) {
       vetor[i] = aux[i];  
-    } // FOR VETOR COMPLETO
+    } 
 	    	
   }
 

@@ -4,7 +4,7 @@ public class App {
     public static void main(String[] args) throws Exception {  
         Scanner scanner = new Scanner(System.in);
         int opcao = 0;
-        int[] vetor = {56,12,67,100,80,31};
+        int[] vetor = {56,12,67,100,80,31,70,34,10,9};
         
         do {
             System.out.println("Menu:\n1- Bubble Sort\n2- Selection Sort\n3- Insertion Sort\n4- Quick Sort\n5- Merge Sort\n6- Sair");
@@ -23,6 +23,11 @@ public class App {
 
                 case 2:
                     // Selection Sort
+                    Utils.imprimirVetor(vetor);
+                    SelectionSort selectionSort = new SelectionSort();
+                    System.out.println(" Ordenado com " + selectionSort.toString());
+                    selectionSort.ordenarVetor(vetor);
+                    Utils.imprimirVetor(vetor);
                     break;
 
                 case 3:
@@ -36,6 +41,11 @@ public class App {
 
                 case 4:
                     // Quick Sort
+                    Utils.imprimirVetor(vetor);
+                    QuickSort quicksort = new QuickSort();
+                    System.out.println("Ordenado com " + quicksort.toString());
+                    quicksort.ordenarVetor(vetor);
+                    Utils.imprimirVetor(vetor);
                     break;
 
                 case 5:
