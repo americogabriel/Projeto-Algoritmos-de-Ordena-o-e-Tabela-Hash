@@ -33,7 +33,6 @@ public class MergeSort implements IAlgoritmoOrdenacao {
   private void intercala(int[] vetor, int inicio, int fim, int meio) {
 		
     int posLivre, inicioVetor1, inicioVetor2;
-	    
     int aux[] = new int[vetor.length];
 	    
     inicioVetor1 = inicio;
@@ -42,45 +41,35 @@ public class MergeSort implements IAlgoritmoOrdenacao {
     posLivre = inicio;
 	    
     while( ( inicioVetor1 <= meio ) && ( inicioVetor2 <= fim ) ) {
-	    	
       if( vetor[inicioVetor1] <= vetor[inicioVetor2] ) {
 	    	  
         aux[posLivre] = vetor[inicioVetor1];
-	        
         inicioVetor1++; 
 	        
-      } else {
-	    	  
+      } 
+      else{
         aux[posLivre] = vetor[inicioVetor2];
 	        
-        inicioVetor2++;
-	        
+        inicioVetor2++; 
       }
 	     
-      posLivre++;
-	      
+      posLivre++;    
     } // WHILE
 	    
-    for(int i = inicioVetor1; i <= meio; i++) {
-	    
+    for(int i = inicioVetor1; i <= meio; i++) { 
       aux[posLivre] = vetor[i];
 	      
-      posLivre++;
-	      
+      posLivre++; 
     } // FOR VETOR 1
 	    
-    for(int i = inicioVetor2; i <= fim; i++) {
-	    	
+    for(int i = inicioVetor2; i <= fim; i++) {	
       aux[posLivre] = vetor[i];
 	      
-      posLivre++;
-	      
+      posLivre++; 
     } // FOR VETOR 2
 	    
     for(int i = inicio; i <= fim; i++) {
-	    	
-      vetor[i] = aux[i];
-	      
+      vetor[i] = aux[i];  
     } // FOR VETOR COMPLETO
 	    	
   }

@@ -11,20 +11,17 @@ public class InsertionSort implements IAlgoritmoOrdenacao {
   public void ordenarVetor(int[] vetor) {
 
     for(int i = 1; i < vetor.length; i++) {
-
-       int aux = vetor[i];
-		     
+       int atual = vetor[i];
        int indiceJ = i - 1;
 		       
-       while ( indiceJ >= 0 && aux < vetor[indiceJ] ) {
-		            
+       while ( indiceJ >= 0 && atual < vetor[indiceJ] ) {
          vetor[indiceJ + 1] = vetor[indiceJ];
-		         
+
          indiceJ = indiceJ - 1;
 		               
        }
 		          
-       vetor[ indiceJ + 1 ] = aux;
+       vetor[ indiceJ + 1 ] = atual;
 
      } // FOR ELEMENTOS
 		     
@@ -33,7 +30,7 @@ public class InsertionSort implements IAlgoritmoOrdenacao {
   @Override
 	
   public String toString() {
-	
+    
     return "InsertionSort";
     
   }

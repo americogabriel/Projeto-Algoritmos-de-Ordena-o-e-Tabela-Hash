@@ -17,20 +17,28 @@ public class Utils {
   public static void imprimirVetor(int[] vetor) {
 	
 	System.out.print( "  Vetor = {" );
-	  
-    for(int i = 0; i < vetor.length; i++) {
-    	
-      System.out.print( vetor[i] );
-      
-      if( i < ( vetor.length - 1 ) ) {
-    	  
-        System.out.print( ", " );
-    	  
+	  if(vetor.length > 100){
+      for(int i = 0; i < 101; i++) {
+
+        System.out.print( vetor[i] );
+        if( i < ( vetor.length - 1 ) ) {
+          System.out.print( ", " );
+        }
+        
       }
-      
+    }
+    else{
+      for(int i = 0; i < vetor.length; i++) {
+
+        System.out.print( vetor[i] );
+        if( i < ( vetor.length - 1 ) ) {
+          System.out.print( ", " );
+        }
+        
+      }
     }
     
-    System.out.print( "}" );
+    System.out.println( "}" );
     
   }
 
