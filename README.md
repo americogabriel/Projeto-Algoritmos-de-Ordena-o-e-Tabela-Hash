@@ -47,19 +47,19 @@ Passos pendentes em ordem de execução:
 
 ### Tabela Hash
 
+Implementação em Java de uma tabela hash encadeada para armazenar alunos. A tabela possui 11 posições e usa a função `h(chave) = chave mod 11`. Colisões são inseridas ao final da lista encadeada correspondente, e não são usadas coleções prontas de hashing.
+
+O programa oferece um menu para inserir, buscar e remover alunos, exibir a tabela e encerrar. A matrícula é inteira e não pode ser duplicada.
+
+Consulte o [README da Tabela Hash](./TabelaHash/README.md) para os requisitos e as instruções de compilação e execução.
+
 Itens concluídos:
 - [x] Estrutura inicial do projeto Java configurada.
-- [x] Nomes dos integrantes da equipe adicionados.
-
-Passos pendentes em ordem de execução:
-- [ ] Passo 1 (Entidade Aluno): Criar a classe Aluno com matrícula (int), nome (String) e idade (int).
-- [ ] Passo 2 (Estrutura de Nó): Criar a classe No contendo objeto Aluno e referência para o próximo nó (sem coleções prontas).
-- [ ] Passo 3 (Classe TabelaHash):
-  - [ ] Instanciar array de nós com tamanho fixo M = 11.
-  - [ ] Implementar função hash: h(chave) = chave mod 11.
-  - [ ] Método inserir: validar duplicatas de matrícula e inserir colisões no final da lista encadeada.
-  - [ ] Métodos buscar, remover e exibir o estado dos 11 índices.
-- [ ] Passo 4 (Menu Interativo): Implementar o loop do menu no App.java com Scanner para as 5 opções (Inserir, Buscar, Remover, Exibir e Sair).
+- [x] Classe `Aluno` com matrícula, nome e idade.
+- [x] Classe `No` para o encadeamento.
+- [x] Classe `TabelaHash` com inserção, busca, remoção e exibição.
+- [x] Menu interativo com as cinco opções e tratamento de entradas inválidas.
+- [x] Regras de matrícula única, função hash com M = 11 e inserção de colisões no final da lista.
 
 ---
 
