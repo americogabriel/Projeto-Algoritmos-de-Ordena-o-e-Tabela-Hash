@@ -1,12 +1,16 @@
-# Projeto Tabela HASH
+# Projeto Tabela Hash
 
-**Data da Apresentação:** 19/11/2026 durante a aula (postar no Blackboard antes da apresentação).  
-**Equipe:** No mínimo 5 e no máximo 7 pessoas.  
-**Avaliação / Nota:** 1,5 pontos.  
+Implementação em Java de uma tabela hash encadeada para armazenar alunos de uma universidade.
 
----
+## Informações do projeto
+
+- **Apresentação:** 19/11/2026, durante a aula.
+- **Submissão:** postar no Blackboard antes da apresentação.
+- **Equipe:** de 5 a 7 integrantes.
+- **Avaliação:** 1,5 ponto.
 
 ## Equipe
+
 - Gabriel da Cunha Prudencio
 - Gabriel Ferreira Américo
 - José Adrian Cosmo de Sousa
@@ -15,82 +19,61 @@
 - João Pedro Medeiros
 - Rafael Onias Barbosa
 
----
+## Dados armazenados
 
-## Descrição do Projeto
+Cada aluno possui:
 
-Implemente usando uma linguagem de programação (C, Java, Python ou JavaScript) a estrutura de dados do tipo **Tabela Hash encadeada** para armazenar informações dos alunos de uma universidade.
-
-### Informações do Aluno
-
-Para cada aluno deve-se armazenar as seguintes informações:
-
-- **Matrícula** (chave de busca) — *Todas as matrículas devem ser números inteiros*
+- **Matrícula:** número inteiro e chave de busca.
 - **Nome**
 - **Idade**
 
----
+## Regras da tabela hash
 
-## Estrutura e Regras de Hashing
+- O tamanho da tabela é fixo: **M = 11**.
+- O endereço de cada matrícula é calculado pela função:
 
-### Função de Transformação (Hash)
+  `h(chave) = chave mod 11`
 
-A seguinte função de transformação deve ser usada:
+- As colisões são tratadas por encadeamento. Quando houver colisão, o novo aluno deve ser inserido **no final da lista** daquele índice.
+- O endereço hash deve ser calculado antes de inserir, buscar ou remover um aluno.
+- Não é permitido cadastrar mais de um aluno com a mesma matrícula.
+- Não podem ser usadas bibliotecas prontas que implementem tabela hash, como `HashMap` ou `Hashtable`.
 
-$$
-h(\text{chave}) = \text{chave} \bmod M
-$$
+## Funcionalidades
 
-Onde **$M = 11$** é o tamanho da tabela hash.
+O programa apresenta um menu com as seguintes opções:
 
-### Tratamento de Colisão (Hashing Encadeado)
+1. **Inserir aluno:** solicita matrícula, nome e idade.
+2. **Buscar aluno:** solicita a matrícula e apresenta o aluno correspondente, se encontrado.
+3. **Remover aluno:** solicita a matrícula e remove o aluno correspondente, se encontrado.
+4. **Exibir tabela hash:** mostra os 11 índices e os alunos encadeados em cada um.
+5. **Encerrar sistema.**
 
-- Durante a inserção, caso ocorra uma colisão, o novo aluno deve ser inserido **no final da lista encadeada**.
-- Antes das operações de **Inserir**, **Buscar** e **Remover**, é necessário computar o valor do endereço usando a Função Hash.
+## Como compilar e executar
 
----
+É necessário ter o Java JDK instalado, com `javac` e `java` disponíveis no `PATH`. Os comandos abaixo devem ser executados no diretório `TabelaHash/`.
 
-## Funcionalidades e Menu do Sistema
+Compile os arquivos-fonte:
 
-Crie um menu interativo com as seguintes opções:
+```bash
+javac -d bin src/*.java
+```
 
-1. **Inserir novo Aluno**
-   - O usuário deve informar: matrícula, nome e idade do aluno.
-   - **Regra:** O sistema **não** deve permitir cadastrar dois alunos com a mesma matrícula.
-2. **Buscar Aluno**
-   - O usuário deve digitar o número da matrícula do aluno.
-3. **Remover Aluno**
-   - O usuário deve digitar o número da matrícula do aluno.
-4. **Exibir Tabela Hash**
-   - Apresenta o estado atual dos índices e suas respectivas listas encadeadas.
-5. **Encerrar Sistema**
+Inicie o programa:
 
----
+```bash
+java -cp bin App
+```
 
-## Avisos e Regras
-- Projetos copiados terão **nota ZERO**.
-- **Nenhuma biblioteca pronta** que forneça a implementação da Tabela Hash pode ser usada (como java.util.HashMap, Hashtable, etc.).
-- Submissão obrigatória com o nome de todos os membros no Blackboard.
+## Andamento da implementação
 
----
-
-## Roteiro de Execução (Ordem de Dependências)
-
-### Concluído
 - [x] Configuração inicial do projeto no VS Code.
-- [x] Identificação da equipe adicionada.
+- [x] Cadastro dos integrantes da equipe.
+- [x] Classe `Aluno` com matrícula, nome e idade.
+- [x] Classe `No` para representar os elementos encadeados.
+- [x] Classe `TabelaHash` com tamanho 11, função hash, inserção, busca, remoção e exibição.
+- [x] Menu interativo com as cinco opções e tratamento de entradas inválidas.
 
-### Pendente (em ordem de prioridade)
-- [ ] **Passo 1 (Entidade Aluno):**
-  - Criar classe Aluno com matrícula (int), nome (String) e idade (int), construtor, getters e toString().
-- [ ] **Passo 2 (Estrutura de Nó / Encadeamento):**
-  - Criar classe No contendo objeto Aluno e referência para o próximo nó (sem usar bibliotecas prontas).
-- [ ] **Passo 3 (Classe TabelaHash):**
-  - Criar array de referências No com tamanho fixo M = 11.
-  - Implementar função hash: h(chave) = chave mod 11.
-  - Implementar método inserir(Aluno a): verificar duplicidade de matrícula antes de inserir; em colisão, inserir obrigatoriamente no final da lista encadeada.
-  - Implementar método buscar(int matricula): retornar o aluno ou null/aviso caso não exista.
-  - Implementar método remover(int matricula): desvincular o nó da lista encadeada mantendo a integridade dos ponteiros.
-  - Implementar método exibir(): percorrer os 11 índices mostrando todos os alunos encadeados em cada posição.
-- [ ] **Passo 4 (Menu Interativo no App.java):**
-  - Instanciar a TabelaHash e criar loop com Scanner no App.java para as 5 opções com tratamento de entradas inválidas.
+## Observação
+
+Projetos copiados terão nota zero.
