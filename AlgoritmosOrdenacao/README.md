@@ -34,17 +34,16 @@
 - [x] Interface IAlgoritmoOrdenacao e utilitário base Utils.
 - [x] Estrutura visual do menu criada no App.java.
 - [x] Identificação da equipe adicionada.
-
-### Pendente (em ordem de prioridade)
-- [ ] **Passo 1 (Fonte de Dados):**
-  - Criar arquivo de dados de teste (.txt) com grande quantidade de números.
-  - Implementar método leitor para carregar esses números para a memória no início da execução.
-- [ ] **Passo 2 (Formatação de Exibição):**
-  - Implementar função para exibir dados de entrada e saída com a regra de limitar aos 100 primeiros itens quando houver grande volume.
-- [ ] **Passo 3 (Integração do Menu no App.java):**
-  - Preencher os cases do menu para operar sobre o vetor carregado em memória.
-  - Utilizar clone do vetor para permitir repetição de testes.
-  - Chamar o algoritmo escolhido, exibir entrada e saída (limitada a 100) e calcular o tempo de execução.
-- [ ] **Passo 4 (Simulação e Análise Comparativa):**
-  - Realizar as simulações para tamanhos de entrada n, n^2, n^3 e n^10.
-  - Preencher tabela comparativa de tempos e indicar a IA utilizada conforme exigido pelo professor.
+- [x] **Passo 1 (Fonte de Dados):**
+  - Arquivo de dados de teste (`entradas.txt`) com sequências de 5 a 200 números.
+  - Métodos leitores e de sorteio implementados em `Utils.java`.
+- [x] **Passo 2 (Formatação de Exibição):**
+  - Função `imprimirVetor` configurada para limitar aos 100 primeiros itens quando há grande volume.
+- [x] **Passo 3 (Integração do Menu no App.java):**
+  - Cases do menu operando sobre o vetor sorteado carregado em memória.
+  - Uso de clone do vetor para garantir repetição de testes sem contaminação entre algoritmos.
+  - Exibição de entrada, saída e cálculo de tempo de execução (ms e ns).
+- [x] **Passo 4 (Simulação e Análise Comparativa):**
+  - Nova opção no menu para gerar relatório de simulações com tamanhos de entrada $n$, $n^2$ (2x), $n^3$ (3x) e $n^{10}$ (10x).
+  - Geração automática de arquivo `relatorio_tempo_execucao.txt` contendo os vetores usados, tempos medidos e tabela comparativa.
+  - Identificação da IA utilizada (Google Antigravity / Gemini 3.8 Flash).
