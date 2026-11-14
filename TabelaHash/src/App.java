@@ -21,18 +21,18 @@ public class App {
             switch (opcao) {
                 case 1:
                     System.out.print("Matricula: ");
-                    int matricula = lerInteiro(scanner);
+                    int matricula = lerInteiroNaoNegativo(scanner);
                     scanner.nextLine();
                     System.out.print("Nome: ");
                     String nome = scanner.nextLine();
                     System.out.print("Idade: ");
-                    int idade = lerInteiro(scanner);
+                    int idade = lerInteiroNaoNegativo(scanner);
                     scanner.nextLine();
                     tabela.inserir(new Aluno(matricula, nome, idade));
                     break;
                 case 2:
                     System.out.print("Matricula para buscar: ");
-                    int mBuscar = lerInteiro(scanner);
+                    int mBuscar = lerInteiroNaoNegativo(scanner);
                     scanner.nextLine();
                     Aluno encontrado = tabela.buscar(mBuscar);
                     if (encontrado != null) {
@@ -43,7 +43,7 @@ public class App {
                     break;
                 case 3:
                     System.out.print("Matricula para remover: ");
-                    int mRemover = lerInteiro(scanner);
+                    int mRemover = lerInteiroNaoNegativo(scanner);
                     scanner.nextLine();
                     tabela.remover(mRemover);
                     break;
@@ -69,6 +69,16 @@ public class App {
                 System.out.println("Entrada invalida. Digite um numero inteiro.");
                 scanner.next();
             }
+        }
+    }
+
+    private static int lerInteiroNaoNegativo(Scanner scanner) {
+        while (true) {
+            int valor = lerInteiro(scanner);
+            if (valor >= 0) {
+                return valor;
+            }
+            System.out.print("Valor invalido. Digite um numero inteiro nao negativo: ");
         }
     }
 }

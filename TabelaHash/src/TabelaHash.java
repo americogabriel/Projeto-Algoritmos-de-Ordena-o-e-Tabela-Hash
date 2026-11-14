@@ -7,7 +7,7 @@ public class TabelaHash {
     }
 
     private int hash(int chave) {
-        return chave % M;
+        return ((chave % M) + M) % M;
     }
 
     public void inserir(Aluno a) {
