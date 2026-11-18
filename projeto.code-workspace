@@ -1,0 +1,12 @@
+{
+  "folders": [
+    {
+      "name": "Algoritmos de Ordenação",
+      "path": "AlgoritmosOrdenacao"
+    },
+    {
+      "name": "Tabela Hash",
+      "path": "TabelaHash"
+    }
+  ]
+}
