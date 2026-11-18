@@ -12,7 +12,7 @@ public class App {
         System.out.println("Vetor inicial carregado aleatoriamente de entradas.txt (" + vetor.length + " elementos).");
         
         do {
-            System.out.println("\nMenu:\n1- Bubble Sort\n2- Selection Sort\n3- Insertion Sort\n4- Quick Sort\n5- Merge Sort\n6- Criar relatorio de tempo de execucao dos algoritmos\n7- Sortear outro vetor de entradas.txt\n8- Sair");
+            System.out.println("\nMenu:\n1- Bubble Sort\n2- Selection Sort\n3- Insertion Sort\n4- Quick Sort\n5- Merge Sort\n6- Sortear outro vetor de entradas.txt\n7- Sair");
             System.out.print("Escolha uma opcao: ");
             opcao = scanner.nextInt();
 
@@ -92,16 +92,12 @@ public class App {
                     System.out.printf("Tempo de execucao: %.4f ms (%d ns)\n", (fim5 - inicio5) / 1_000_000.0, (fim5 - inicio5));
                     break;
                 case 6:
-                    // Criar relatório de tempo de execução dos algoritmos
-                    Utils.gerarRelatorioExecucao(vetorOriginal, "relatorio_tempo_execucao.txt");
-                    break;
-                case 7:
                     // Sortear um novo vetor
                     vetorOriginal = Utils.sortearVetorDoArquivo("entradas.txt"); // chama o método sortearVetorDoArquivo() para guarda o vetor sorteado na variável
                     vetor = vetorOriginal.clone(); // passa uma copia dos valores do vetor para a memória da variável "vetor"
                     System.out.println("\nNovo vetor sorteado de entradas.txt com sucesso (" + vetor.length + " elementos)!");
                     break;
-                case 8:
+                case 7:
                     // Parar execução
                     System.out.println("Saindo...");
                     break;
@@ -109,7 +105,7 @@ public class App {
                     System.out.println("Opcao invalida!");
                     break;
             }
-        } while (opcao != 8);
+        } while (opcao != 7);
 
         scanner.close();
     }
