@@ -1,25 +1,29 @@
 import java.util.Scanner;
 
 public class App {
-    public static void main(String[] args) throws Exception {  
+    public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
         int opcao = 0;
-        
-        // Sorteia aleatoriamente uma sequência de números do arquivo entradas.txt (entre 5 e 200 elementos) com o método sortearVetorDoArquivo
+
+        // Sorteia aleatoriamente uma sequência de números do arquivo entradas.txt
+        // (entre 5 e 200 elementos) com o método sortearVetorDoArquivo
         int[] vetorOriginal = Utils.sortearVetorDoArquivo("entradas.txt");
-        int[] vetor = vetorOriginal.clone(); // crio um novo array na memória de "vetor" com os valores de "vetorOriginal"
+        int[] vetor = vetorOriginal.clone(); // crio um novo array na memória de "vetor" com os valores de
+                                             // "vetorOriginal"
 
         System.out.println("Vetor inicial carregado aleatoriamente de entradas.txt (" + vetor.length + " elementos).");
-        
+
         do {
-            System.out.println("\nMenu:\n1- Bubble Sort\n2- Selection Sort\n3- Insertion Sort\n4- Quick Sort\n5- Merge Sort\n6- Sortear outro vetor de entradas.txt\n7- Sair");
+            System.out.println(
+                    "\nMenu:\n1- Bubble Sort\n2- Selection Sort\n3- Insertion Sort\n4- Quick Sort\n5- Merge Sort\n6- Sortear outro vetor de entradas.txt\n7- Sair");
             System.out.print("Escolha uma opcao: ");
-            opcao = scanner.nextInt();
+            opcao = lerInteiro(scanner);
 
             switch (opcao) {
                 case 1:
                     // Bubble Sort
-                    vetor = vetorOriginal.clone(); // reinicio o vetor para desordenar ele sempre que quiser trocar de algortimo de ordenação
+                    vetor = vetorOriginal.clone(); // reinicio o vetor para desordenar ele sempre que quiser trocar de
+                                                   // algortimo de ordenação
                     System.out.println("\n--- Vetor Original (Tamanho: " + vetor.length + ") ---");
                     Utils.imprimirVetor(vetor);
                     BubbleSort bubbleSort = new BubbleSort();
@@ -29,12 +33,14 @@ public class App {
                     long fim1 = System.nanoTime();
                     System.out.println("--- Vetor Ordenado ---");
                     Utils.imprimirVetor(vetor);
-                    System.out.printf("Tempo de execucao: %.4f ms (%d ns)\n", (fim1 - inicio1) / 1_000_000.0, (fim1 - inicio1));
+                    System.out.printf("Tempo de execucao: %.4f ms (%d ns)\n", (fim1 - inicio1) / 1_000_000.0,
+                            (fim1 - inicio1));
                     break;
 
                 case 2:
                     // Selection Sort
-                    vetor = vetorOriginal.clone(); // reinicio o vetor para desordenar ele sempre que quiser trocar de algortimo de ordenação
+                    vetor = vetorOriginal.clone(); // reinicio o vetor para desordenar ele sempre que quiser trocar de
+                                                   // algortimo de ordenação
                     System.out.println("\n--- Vetor Original (Tamanho: " + vetor.length + ") ---");
                     Utils.imprimirVetor(vetor);
                     SelectionSort selectionSort = new SelectionSort();
@@ -44,12 +50,14 @@ public class App {
                     long fim2 = System.nanoTime();
                     System.out.println("--- Vetor Ordenado ---");
                     Utils.imprimirVetor(vetor);
-                    System.out.printf("Tempo de execucao: %.4f ms (%d ns)\n", (fim2 - inicio2) / 1_000_000.0, (fim2 - inicio2));
+                    System.out.printf("Tempo de execucao: %.4f ms (%d ns)\n", (fim2 - inicio2) / 1_000_000.0,
+                            (fim2 - inicio2));
                     break;
 
                 case 3:
                     // Insertion Sort
-                    vetor = vetorOriginal.clone(); // reinicio o vetor para desordenar ele sempre que quiser trocar de algortimo de ordenação
+                    vetor = vetorOriginal.clone(); // reinicio o vetor para desordenar ele sempre que quiser trocar de
+                                                   // algortimo de ordenação
                     System.out.println("\n--- Vetor Original (Tamanho: " + vetor.length + ") ---");
                     Utils.imprimirVetor(vetor);
                     InsertionSort insertionSort = new InsertionSort();
@@ -59,12 +67,14 @@ public class App {
                     long fim3 = System.nanoTime();
                     System.out.println("--- Vetor Ordenado ---");
                     Utils.imprimirVetor(vetor);
-                    System.out.printf("Tempo de execucao: %.4f ms (%d ns)\n", (fim3 - inicio3) / 1_000_000.0, (fim3 - inicio3));
+                    System.out.printf("Tempo de execucao: %.4f ms (%d ns)\n", (fim3 - inicio3) / 1_000_000.0,
+                            (fim3 - inicio3));
                     break;
 
                 case 4:
                     // Quick Sort
-                    vetor = vetorOriginal.clone(); // reinicio o vetor para desordenar ele sempre que quiser trocar de algortimo de ordenação
+                    vetor = vetorOriginal.clone(); // reinicio o vetor para desordenar ele sempre que quiser trocar de
+                                                   // algortimo de ordenação
                     System.out.println("\n--- Vetor Original (Tamanho: " + vetor.length + ") ---");
                     Utils.imprimirVetor(vetor);
                     QuickSort quicksort = new QuickSort();
@@ -74,12 +84,14 @@ public class App {
                     long fim4 = System.nanoTime();
                     System.out.println("--- Vetor Ordenado ---");
                     Utils.imprimirVetor(vetor);
-                    System.out.printf("Tempo de execucao: %.4f ms (%d ns)\n", (fim4 - inicio4) / 1_000_000.0, (fim4 - inicio4));
+                    System.out.printf("Tempo de execucao: %.4f ms (%d ns)\n", (fim4 - inicio4) / 1_000_000.0,
+                            (fim4 - inicio4));
                     break;
 
                 case 5:
                     // Merge Sort
-                    vetor = vetorOriginal.clone(); // reinicio o vetor para desordenar ele sempre que quiser trocar de algortimo de ordenação
+                    vetor = vetorOriginal.clone(); // reinicio o vetor para desordenar ele sempre que quiser trocar de
+                                                   // algortimo de ordenação
                     System.out.println("\n--- Vetor Original (Tamanho: " + vetor.length + ") ---");
                     Utils.imprimirVetor(vetor);
                     MergeSort mergeSort = new MergeSort();
@@ -89,13 +101,18 @@ public class App {
                     long fim5 = System.nanoTime();
                     System.out.println("--- Vetor Ordenado ---");
                     Utils.imprimirVetor(vetor);
-                    System.out.printf("Tempo de execucao: %.4f ms (%d ns)\n", (fim5 - inicio5) / 1_000_000.0, (fim5 - inicio5));
+                    System.out.printf("Tempo de execucao: %.4f ms (%d ns)\n", (fim5 - inicio5) / 1_000_000.0,
+                            (fim5 - inicio5));
                     break;
                 case 6:
                     // Sortear um novo vetor
-                    vetorOriginal = Utils.sortearVetorDoArquivo("entradas.txt"); // chama o método sortearVetorDoArquivo() para guarda o vetor sorteado na variável
-                    vetor = vetorOriginal.clone(); // passa uma copia dos valores do vetor para a memória da variável "vetor"
-                    System.out.println("\nNovo vetor sorteado de entradas.txt com sucesso (" + vetor.length + " elementos)!");
+                    vetorOriginal = Utils.sortearVetorDoArquivo("entradas.txt"); // chama o método
+                                                                                 // sortearVetorDoArquivo() para guarda
+                                                                                 // o vetor sorteado na variável
+                    vetor = vetorOriginal.clone(); // passa uma copia dos valores do vetor para a memória da variável
+                                                   // "vetor"
+                    System.out.println(
+                            "\nNovo vetor sorteado de entradas.txt com sucesso (" + vetor.length + " elementos)!");
                     break;
                 case 7:
                     // Parar execução
@@ -108,5 +125,24 @@ public class App {
         } while (opcao != 7);
 
         scanner.close();
+    }
+
+    /**
+     * Lê uma linha do console e garante o retorno de um número inteiro válido.
+     */
+    private static int lerInteiro(Scanner scanner) {
+        while (true) {
+            if (!scanner.hasNextLine()) {
+                return 7;
+            }
+            // Lê a linha inteira para evitar resíduos no buffer do Scanner em entradas com
+            // espaços.
+            String entrada = scanner.nextLine().trim();
+            try {
+                return Integer.parseInt(entrada);
+            } catch (NumberFormatException e) {
+                System.out.print("Entrada invalida! Digite um numero inteiro: ");
+            }
+        }
     }
 }
